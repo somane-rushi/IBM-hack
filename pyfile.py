@@ -1,5 +1,4 @@
 import asyncio
-from text_to_voice import *
 from beeai_framework.backend.chat import ChatModel
 from beeai_framework.tools.search.wikipedia import WikipediaTool
 #from beeai_framework.tools.weather.openmeteo import OpenMeteoTool
@@ -11,7 +10,7 @@ async def main() -> None:
 
     workflow.add_agent(
         name="Researcher",
-        role="A diligent researcher.",
+        role="A diligent researcher specializing in farming.",
         instructions="You look up and provide information about a specific topic.",
         tools=[WikipediaTool()],
         llm=llm,
@@ -32,8 +31,8 @@ async def main() -> None:
         llm=llm,
     )
 
-    location = "Saint-Tropez"
-    plant = "Lavender"
+    location = 'location_name'
+    plant = 'plant_name'
 
     response = await workflow.run(
         inputs=[
@@ -58,7 +57,7 @@ async def main() -> None:
 
     print("==== Final Answer ====")
     print(response.result.final_answer)
-    turn_to_voice(response.result.final_answer)
+    text_to_voice(response.result.final_answer)
 
 
 if __name__ == "__main__":
