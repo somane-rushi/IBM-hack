@@ -58,7 +58,7 @@ async def main() -> None:
 
     print("==== Final Answer ====")
     print(response.result.final_answer)
-    text_to_voice(response.result.final_answer)
+    turn_to_voice(response.result.final_answer)
 
 
 if __name__ == "__main__":
