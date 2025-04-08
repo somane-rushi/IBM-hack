@@ -1,4 +1,5 @@
 import asyncio
+from text_to_voice import *
 from beeai_framework.backend.chat import ChatModel
 from beeai_framework.tools.search.wikipedia import WikipediaTool
 #from beeai_framework.tools.weather.openmeteo import OpenMeteoTool
